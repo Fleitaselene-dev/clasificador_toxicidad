@@ -1,0 +1,27 @@
+body{
+    background-color: rgb(246, 230, 228);
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#result {
+background-color: #f0f0f0;
+padding: 1em;
+margin-top: 1em;
+width: 90%;
+max-width: 600px;
+overflow-x: auto;
+white-space: pre-wrap;
+border-radius: 8px;
+font-family: monospace;
+}
+button{
+cursor: pointer;
+}
+button:hover{
+background-color: black;
+color: white
+}

@@ -3,39 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
     <title>Clasificador de toxicidad</title>
 </head>
-<style>
-    .container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-</style>
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.0.0/dist/tf.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/toxicity@1.2.2"></script>
 <body>
     <div class="container">
-    <h1>Clasificador de toxicidad</h1>
+    <h1>Clasificador de toxicidad ⚠</h1>
     <div>
         <h3>Escribe una frase en ingles: </h3>
         <input id="sentences" type="text" placeholder="Escribe algo aqui">
         <button onclick="checkToxicity()">Analizar</button>
     </div>
-     <pre id="result"></pre>
+     <pre id="result">result...</pre>
     </div>
-    <script>
-        const threshold = 0.5;
-        let model
-        toxicity.load(threshold).then((loadedModel) => {
-            model = loadedModel; })
-            function checkToxicity(){ 
-            const sentences = [document.getElementById("sentences").value];
-            model.classify(sentences).then((predictions) => {
-            const result = document.getElementById("result").textContent = JSON.stringify(predictions, null, 2);
-            });
-            }  
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.0.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/toxicity@1.2.2"></script>
+    <script src="./assets/script.js"></script>
 </body>
 </html>
